@@ -1,0 +1,36 @@
+<div class="container">
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">SKU</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='active' *ngFor="let product of cartItems">
+        <td>{{product.sku}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price |currency:"INR"}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Total Cost : {{ cartCost | currency:"INR"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="!cartItems" class="panel panel-primary">
+  <h1>Cart Empty!!</h1>
+
+</div>
+<div class="btn-toolbar">
+  <button type="button" class="btn btn-primary btn-sm" text-allign="center" margin="100px 25px" (click)="showError()">Checkout</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="clear();">Clear Cart</button>
+</div>
+
+<br>
+<br>

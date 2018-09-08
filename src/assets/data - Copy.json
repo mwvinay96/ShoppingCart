@@ -1,0 +1,9 @@
+{
+   "item 1": {
+      "sku": "APL",
+      "name": "Apple",
+      "description": "Eat one every day to keep the doctor away!",
+      "price": 12,
+      "cal": 90
+   }
+}

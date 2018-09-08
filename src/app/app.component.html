@@ -1,15 +1,18 @@
+
 <nav class="navbar navbar-expand navbar-light bg-light">
   <a class='navbar-brand'>
     <h1>Big Basket</h1>
   </a>
   <div class="navb">
-    <div class="nav navbar-nav nav-pills">
-      <a class="nav-item nav-link active" routerLinkActive='active' [routerLink]="['welcome']">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" routerLinkActive='active' href="#">Products</a>
-      <a class="nav-item nav-link" routerLinkActive='active' href="#">Cart</a>
+      <div class="nav navbar-nav nav-pills">
+      <a class="nav-item nav-link" routerLinkActive='active' [routerLink]="['welcome']">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLinkActive='active' [routerLink]="['products']">Products</a>
+      <a class="nav-item nav-link" routerLinkActive='active' [routerLink]="['cart']">Cart</a>
+      <a class="nav-item nav-link" routerLinkActive='active' [routerLink]="['additem']">Add Item</a>
     </div>
   </div>
 </nav>
 <div class='container'>
   <router-outlet></router-outlet>
 </div>
+

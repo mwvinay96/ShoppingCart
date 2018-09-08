@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ShoppingCart</title>
@@ -7,10 +8,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 </head>
+
 <body>
   <app-root></app-root>
   <app-welcome></app-welcome>
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC_Y6FkB4-O1iqzIv71ZXtMNoaL6WATrSg",
+      authDomain: "shopping-cart-36224.firebaseapp.com",
+      databaseURL: "https://shopping-cart-36224.firebaseio.com",
+      projectId: "shopping-cart-36224",
+      storageBucket: "shopping-cart-36224.appspot.com",
+      messagingSenderId: "810865869845"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+
 </body>
+
 </html>

@@ -1,0 +1,15 @@
+[{
+    "sku": "APL",
+    "name": "Apple",
+    "description": "Eat one every day to keep the doctor away!",
+    "price": 12,
+    "cal": 90
+  },
+  {
+    "sku": "AVC",
+    "name": "Avocado",
+    "description": "Guacamole anyone?",
+    "price": 16,
+    "cal": 90
+  }
+]
