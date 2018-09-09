@@ -4,6 +4,7 @@ import { Product } from '../product-list/product';
 import { CartServiceService } from '../service/cart-service.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 
 
@@ -36,16 +37,18 @@ export class ProductListComponent implements OnInit {
   }
 
   constructor(private productService: ProductService,
-    private cartService:CartServiceService,
+    private cartService: CartServiceService,
     private toastr: ToastrService,
-    private spinner: NgxSpinnerService) { }
+    private spinner: NgxSpinnerService,
+    private router: Router, ) { }
 
   ngOnInit(): void {
-    this.spinner.show()
-    this.getProducts();
+    this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
-  }, 2000);
+    }, 2000);
+    this.getProducts();
+
   }
 
   private getProducts() {
@@ -58,12 +61,16 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  addToCart(data:Product){
+  addToCart(data: Product) {
     this.cartService.addToCart(data);
   }
 
   showSuccess() {
-    this.toastr.success('Succesfully Added to Cart','Success');
+    this.toastr.success('Succesfully Added to Cart', 'Success');
+  }
+
+  navToCart() {
+    this.router.navigate(['/cart']);
   }
 }
 

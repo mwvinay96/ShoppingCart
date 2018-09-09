@@ -5,6 +5,7 @@ import { AngularFireObject } from 'angularfire2/database';
 import { ProductService } from '../service/product.service';
 import { CartServiceService } from '../service/cart-service.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class DisplayCartComponent implements OnInit {
 
 
   constructor(private service: CartServiceService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private router:Router) { }
 
   clear() {
     localStorage.clear();
@@ -48,9 +50,13 @@ export class DisplayCartComponent implements OnInit {
       this.toastr.info('Thank you for Shopping with us!!!', 'Success', {
         positionClass: 'toast-bottom-right',
       })
+      this.clear();
     }
+  }
 
 
+  navToList(){
+    this.router.navigate(['/products']);
   }
 }
 

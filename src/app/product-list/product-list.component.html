@@ -33,7 +33,7 @@
             <td>{{product.description}}</td>
             <td>{{product.cal}}</td>
             <td>{{product.price| currency:"INR"}}</td>
-            <td><button class="btn-primary" type="submit" (click)="addToCart(product); showSuccess();"  >Add To Cart</button></td>
+            <td><button class="btn-primary" type="submit" (click)="addToCart(product); showSuccess(); navToCart();"  >Add To Cart</button></td>
           </tr>
         </tbody>
       </table>
