@@ -54,11 +54,12 @@ export class ProductListComponent implements OnInit {
   private getProducts() {
     this.productService.fetchData().subscribe((data: any) => {
       console.log(data);
-      for (var key in data) {
+      // tslint:disable-next-line:forin
+      for (const key in data) {
         this.products.push(data[key]);
       }
       this.filteredProducts = this.products;
-    })
+    });
   }
 
   addToCart(data: Product) {
