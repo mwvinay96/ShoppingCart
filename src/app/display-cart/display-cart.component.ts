@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   providers: [ItemFormFBService]
 })
 export class DisplayCartComponent implements OnInit {
-  cartCost: number = 0;
+  cartCost = 0;
   cartItems: Product[];
 
 
@@ -27,7 +27,7 @@ export class DisplayCartComponent implements OnInit {
     if (!localStorage) {
       localStorage.clear();
     } else {
-      this.toastr.error("No item/s to clear!", "Warning!!!")
+      this.toastr.error('No item/s to clear!', 'Warning!!!')
     }
 
     this.ngOnInit();
@@ -65,6 +65,3 @@ export class DisplayCartComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 }
-
-
-
