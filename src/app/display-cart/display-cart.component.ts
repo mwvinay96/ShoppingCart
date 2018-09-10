@@ -21,18 +21,24 @@ export class DisplayCartComponent implements OnInit {
 
   constructor(private service: CartServiceService,
     private toastr: ToastrService,
-    private router:Router) { }
+    private router: Router) { }
 
   clear() {
-    localStorage.clear();
+    if (!localStorage) {
+      localStorage.clear();
+    } else {
+      this.toastr.error("No item/s to clear!", "Warning!!!")
+    }
+
     this.ngOnInit();
   }
 
   getCost() {
-    this.cartCost=0;
+    this.cartCost = 0;
     if (!(this.cartItems === null)) {
-      for (let item of this.cartItems)
+      for (const item of this.cartItems) {
         this.cartCost += item.price;
+      }
     }
   }
 
@@ -49,13 +55,13 @@ export class DisplayCartComponent implements OnInit {
     } else {
       this.toastr.info('Thank you for Shopping with us!!!', 'Success', {
         positionClass: 'toast-bottom-right',
-      })
+      });
       this.clear();
     }
   }
 
 
-  navToList(){
+  navToList() {
     this.router.navigate(['/products']);
   }
 }
