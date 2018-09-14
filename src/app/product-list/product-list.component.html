@@ -29,7 +29,7 @@
         <tbody>
           <tr *ngFor="let product of filteredProducts">
             <td><img class="zoom" src="/src/assets/icon.png" width="30px"></td>
-            <td><a routerLinkActive='active' [routerLink]="['/products',product.sku]">{{product.name}}</a></td>
+            <td><a routerLinkActive='active' [routerLink]="['/products',product.sku]">{{product.name}}</a></td>  <!---->
             <td>{{product.description}}</td>
             <td>{{product.cal}}</td>
             <td>{{product.price| currency:"INR"}}</td>

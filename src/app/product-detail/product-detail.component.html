@@ -6,19 +6,19 @@
       <div class='col-md-8'>
         <div class='row'>
           <div class='col-md-4'>Name:</div>
-          <div class='col-md-8'>{{product.name}}</div>
+          <div class='col-md-8'>{{product?.name}}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>Code:</div>
-          <div class='col-md-8'>{{product.sku}}</div>
+          <div class='col-md-8'>{{product?.sku}}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>Description:</div>
-          <div class='col-md-8'>{{product.description}}</div>
+          <div class='col-md-8'>{{product?.description}}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>Price:</div>
-          <div class='col-md-8'>{{product.price | currency:"INR"}}</div>
+          <div class='col-md-8'>{{product?.price | currency:"INR"}}</div>
         </div>
       </div>
 

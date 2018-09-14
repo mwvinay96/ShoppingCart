@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemFormFBService } from '../add-item-form/shared/item-form-fb.service';
 import { Product } from '../product-list/product';
-import { AngularFireObject } from 'angularfire2/database';
-import { ProductService } from '../service/product.service';
 import { CartServiceService } from '../service/cart-service.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -18,13 +16,12 @@ export class DisplayCartComponent implements OnInit {
   cartCost = 0;
   cartItems: Product[];
 
-
   constructor(private service: CartServiceService,
     private toastr: ToastrService,
     private router: Router) { }
 
   clear() {
-    if (!localStorage) {
+    if (localStorage.length !== 0) {
       localStorage.clear();
     } else {
       this.toastr.error('No item/s to clear!', 'Warning!!!')

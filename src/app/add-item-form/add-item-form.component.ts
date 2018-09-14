@@ -17,6 +17,7 @@ export class AddItemFormComponent implements OnInit {
     this.fbGetData();
   }
 
+  // tslint:disable-next-line:member-ordering
   itemForm = new FormGroup({
     sku: new FormControl('', [
       Validators.required,
@@ -25,13 +26,13 @@ export class AddItemFormComponent implements OnInit {
     description: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
     cal: new FormControl('', Validators.required)
-  })
+  });
 
 
   fbGetData() {
     firebase.database().ref('/').on('child_added', (snapshot) => {
       console.log(snapshot.value);
-    })
+    });
   }
 
   fbPostData() {
@@ -39,7 +40,7 @@ export class AddItemFormComponent implements OnInit {
   }
 
   constructor(private router: Router,
-    private toastr:ToastrService) {
+    private toastr: ToastrService) {
 
   }
   onBack(): void {
@@ -47,8 +48,8 @@ export class AddItemFormComponent implements OnInit {
   }
 
 
-  onAdd(){
-    this.toastr.info('Succesfully added Product','Success');
+  onAdd() {
+    this.toastr.info('Succesfully added Product', 'Success');
   }
 
 }
