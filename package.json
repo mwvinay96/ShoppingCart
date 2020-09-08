@@ -26,7 +26,7 @@
     "firebase": "^4.6.1",
     "ngx-spinner": "^6.1.2",
     "ngx-toastr": "^9.0.2",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.6.3",
     "rxjs-compat": "^6.3.2",
     "zone.js": "~0.8.26"
   },
